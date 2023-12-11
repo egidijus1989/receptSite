@@ -7,24 +7,26 @@ import wifi from "../../img/Vector3.png";
 
 const FoodCard = () => {
   return (
-    <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src={foodImg1} />
+    <Card style={{ width: "25rem" }}>
+      <Card.Img src={foodImg1} />
       <Card.ImgOverlay>
-        <ul>
-          <li>
-            <img src={clock}></img>10 min.
-          </li>
-          <li>
-            <img src={person}></img>2 serving
-          </li>
-          <li>
-            <img src={wifi}></img>Easy
-          </li>
-        </ul>
+        <Card.Text>
+          <ul>
+            <li>
+              <img src={clock}></img>10 min.
+            </li>
+            <li>
+              <img src={person}></img>2 serving
+            </li>
+            <li>
+              <img src={wifi}></img>Easy
+            </li>
+          </ul>
+        </Card.Text>
       </Card.ImgOverlay>
       <Card.Body>
         <Card.Title>Creamy Salad</Card.Title>
-        <a href="#">View Recipe</a>{" "}
+        <a href="#">View Recipe</a>
       </Card.Body>
     </Card>
   );
