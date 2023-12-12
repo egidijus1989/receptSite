@@ -38,4 +38,13 @@ div.row {
       background: #f79f1a;
     }
   }
+  .right {
+    img {
+    }
+  }
+}
+@media (max-width: 768px) {
+  .right {
+    display: none;
+  }
 }

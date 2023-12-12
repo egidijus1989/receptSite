@@ -1,21 +1,29 @@
-a.Logo.navbar-brand {
-  color: #006400;
-  font-weight: bold;
-}
-.container.navigation {
-  margin: auto;
-  padding: 0 2rem;
-}
-.Navbar.brand {
-  color: #046e1b;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-}
-div.navigation.navbar-nav {
+.header {
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
-}
-a.nav-link {
-  font-weight: bold;
+  a.Logo.navbar-brand {
+    color: #046e1b;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+  }
+  .navigation {
+    margin: auto;
+    padding: 0 2rem;
+    a {
+      color: black;
+      font-weight: bold;
+    }
+  }
+  .nav {
+    a {
+      color: black;
+      font-weight: bold;
+    }
+  }
+  div.navigation.navbar-nav {
+    justify-content: space-between;
+  }
 }

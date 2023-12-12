@@ -15,9 +15,9 @@ div.upper.col {
 div.lowerLeft.col {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-  padding: 0%;
+  // padding: 0%;
   margin-bottom: 4rem;
   ul {
     padding: 0%;

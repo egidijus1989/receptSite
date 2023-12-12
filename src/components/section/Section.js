@@ -1,7 +1,8 @@
 import "./section.scss";
 import { Container, Row, Col } from "react-bootstrap";
-import breakfast from "../../img/sectioImg.png";
+import breakfast from "../../img/eggandbacon.png";
 import Button from "react-bootstrap/Button";
+import Image from "react-bootstrap/Image";
 
 const Section = () => {
   return (
@@ -15,8 +16,8 @@ const Section = () => {
           </p>
           <Button variant="warning">Explore Recipes</Button>{" "}
         </Col>
-        <Col xxl={6}>
-          <img src={breakfast} />
+        <Col className="right">
+          <Image src={breakfast} fluid />;
         </Col>
       </Row>
     </Container>
