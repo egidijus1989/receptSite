@@ -5,34 +5,34 @@ import clock from "../../img/Vector1.png";
 import person from "../../img/Vector2.png";
 import wifi from "../../img/Vector3.png";
 
-const FoodCard = () => {
+const FoodCard = (props) => {
   return (
     <Card style={{ width: "25rem" }}>
       <div className="cardUpper">
-        <img src={foodImg1} />
+        <img src={props.img} />
         <div className="cardUpperInfo">
           <div className="time">
             <div>
               <img src={clock}></img>
             </div>
-            <div className="m-1">10 mins</div>
+            <div className="m-1">{props.time}</div>
           </div>
           <div className="person">
             <div>
               <img src={person}></img>
             </div>
-            <div>2 serving</div>
+            <div>{props.serving}</div>
           </div>
           <div className="wifi">
             <div>
               <img src={clock}></img>
             </div>
-            <div>Easy</div>
+            <div>{props.dificullty}</div>
           </div>
         </div>
       </div>
       <Card.Body>
-        <Card.Title>Creamy Salad</Card.Title>
+        <Card.Title>{props.foodName}</Card.Title>
         <a href="#">View Recipe</a>
       </Card.Body>
     </Card>
