@@ -17,7 +17,7 @@ const Section = () => {
           <Button variant="warning">Explore Recipes</Button>{" "}
         </Col>
         <Col className="right">
-          <Image src={breakfast} fluid />;
+          <Image src={breakfast} fluid />
         </Col>
       </Row>
     </Container>
