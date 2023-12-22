@@ -12,7 +12,6 @@ const Main = () => {
   const filteredRecipes = Food.filter((recipes) => {
     return recipes.foodName.includes(searchTerm);
   });
-  console.log(searchTerm);
   return (
     <div className="container">
       <RecipesTop />
