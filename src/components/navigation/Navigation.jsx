@@ -4,6 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import grain from "../../img/grain.png";
 import CategoriesDropdawn from "../catgoriesDropdown/CategoriesDropdawn";
+import { Link } from "react-router-dom";
 
 // import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,40 +13,58 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
 
 const Navigation = () => {
-  const [categories, setCategories] =useState([])
-  useEffect(() =>{
-    try{
+  const [categories, setCategories] = useState([]);
+  useEffect(() => {
+    try {
       fetch(`https://www.themealdb.com/api/json/v1/1/categories.php`)
-      .then(response=>response.json())
-      .then(data=>{
-        setCategories(data)
-        console.log(data)
-        })
-    }catch(msg){
-      console.log(msg)
+        .then((response) => response.json())
+        .then((data) => {
+          setCategories(data.categories);
+        });
+    } catch (msg) {
+      console.log(msg);
     }
-  }, [])
+  }, []);
   return (
     <Container className="header">
       <Navbar.Brand href="#home" className="Logo">
         <img src={grain}></img>Recipedia
       </Navbar.Brand>
-      <Nav className="navigation">
-        <Nav.Link href="#home">Home</Nav.Link>
-        <div className="dropdown">
-          <a className="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Categories
-          </a>
-          <ul className="dropdown-menu">
-            {categories.map((category)=>
-              <CategoriesDropdawn key={category.idCategory} category={category.strCategory}/>
-            )}
-            <li><a className="dropdown-item" href="#">Action</a></li>
-          </ul>
-        </div>
-        <Nav.Link href="#pricing">Community</Nav.Link>
-        <Nav.Link href="#pricing">About Us</Nav.Link>
-      </Nav>
+      <ul className="nav center">
+        <li className="nav-item">
+          <Link to="/" className="nav-link" aria-current="page">
+            Home
+          </Link>
+        </li>
+        <li className="nav-item">
+          <div className="dropdown">
+            <button
+              className="btn dropdown-toggle fw-bold"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Categories
+            </button>
+            <ul className="dropdown-menu">
+              {categories.map((category) => (
+                <CategoriesDropdawn
+                  key={category.idCategory}
+                  name={category.strCategory}
+                />
+              ))}
+            </ul>
+          </div>
+        </li>
+        <li className="nav-item">
+          <a href="#comunity">Community</a>
+        </li>
+        <li className="nav-item">
+          <Link to="/about" className="nav-link" aria-current="page">
+            About Us
+          </Link>
+        </li>
+      </ul>
       <Nav>
         <Nav.Link href="#search">
           <FontAwesomeIcon icon={faMagnifyingGlass} />

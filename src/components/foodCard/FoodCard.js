@@ -4,6 +4,7 @@ import foodImg1 from "../../img/food1.png";
 import clock from "../../img/Vector1.png";
 import person from "../../img/Vector2.png";
 import wifi from "../../img/Vector3.png";
+import { Link } from "react-router-dom";
 
 const FoodCard = (props) => {
   return (
@@ -25,7 +26,7 @@ const FoodCard = (props) => {
           </div>
           <div className="wifi">
             <div>
-              <img src={clock}></img>
+              <img src={wifi}></img>
             </div>
             <div>{props.dificullty}</div>
           </div>
@@ -33,7 +34,7 @@ const FoodCard = (props) => {
       </div>
       <Card.Body>
         <Card.Title>{props.foodName}</Card.Title>
-        <a href="#">View Recipe</a>
+        <Link to="/about">View Recipe</Link>
       </Card.Body>
     </Card>
   );

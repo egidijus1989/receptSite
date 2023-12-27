@@ -2,20 +2,33 @@ import "./recipes.scss";
 import FoodCard from "../foodCard/FoodCard";
 import { Container, Row, Col } from "react-bootstrap";
 // import FoodData from "../../data/Food";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Recipes = (props) => {
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min);
+  }
+  function roundNearest5(num) {
+    return Math.round(num / 5) * 5;
+  }
+
+  let dificulties = ["easy", "Medium", "dificult"];
+
   return (
     <Container className="recipes">
       <Row className="recipesHeadingBody">
-        {props.items.map((post) => (
+        {props.items.slice(0, 6).map((food) => (
           <FoodCard
-            key={post.id}
-            time={post.time}
-            serving={post.serving}
-            dificullty={post.dificullty}
-            foodName={post.foodName}
-            img={post.img}
+            key={food.idMeal}
+            time={roundNearest5(getRandomInt(15, 45))}
+            serving={getRandomInt(2, 5)}
+            dificullty={
+              dificulties[Math.floor(Math.random() * dificulties.length)]
+            }
+            foodName={food.strMeal}
+            img={food.strMealThumb}
           />
         ))}
       </Row>
