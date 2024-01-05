@@ -2,15 +2,17 @@ import Search from "../search/Search";
 import Recipes from "../recipes/Recipes";
 import { useState, useEffect } from "react";
 import RecipesTop from "../recipesTop/RecipesTop";
-import { faArrowsTurnToDots } from "@fortawesome/free-solid-svg-icons";
+import { useParams } from "react-router-dom";
 
 const Main = () => {
   const [searchTerm, setSearchterm] = useState("");
   const [foods, setFoods] = useState([]);
+  let { id } = useParams();
 
   useEffect(() => {
+    if (id == null) id = "Beef";
     try {
-      fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s`)
+      fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${id}`)
         .then((response) => response.json())
         .then((data) => {
           setFoods(data.meals);
@@ -32,7 +34,6 @@ const Main = () => {
       <RecipesTop />
       <Search onSearch={handleInputChange} val={searchTerm} />
       <Recipes items={filteredRecipes} />
-      {/* <Recipes searchTerm={searchTerm} /> */}
     </div>
   );
 };

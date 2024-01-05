@@ -4,9 +4,9 @@ const CategoriesDropdawn = (props) => {
   return (
     <>
       <li>
-        <a className="dropdown-item" href="#">
+        <Link className="dropdown-item" to={`/category/${props.link}`}>
           {props.name}
-        </a>
+        </Link>
       </li>
     </>
   );

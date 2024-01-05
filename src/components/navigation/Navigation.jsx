@@ -4,9 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import grain from "../../img/grain.png";
 import CategoriesDropdawn from "../catgoriesDropdown/CategoriesDropdawn";
-import { Link } from "react-router-dom";
-
-// import ReactDOM from 'react-dom'
+import { Link, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
@@ -20,6 +18,7 @@ const Navigation = () => {
         .then((response) => response.json())
         .then((data) => {
           setCategories(data.categories);
+          console.log(data.categories);
         });
     } catch (msg) {
       console.log(msg);
@@ -51,6 +50,7 @@ const Navigation = () => {
                 <CategoriesDropdawn
                   key={category.idCategory}
                   name={category.strCategory}
+                  link={category.strCategory}
                 />
               ))}
             </ul>
