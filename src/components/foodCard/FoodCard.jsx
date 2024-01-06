@@ -34,7 +34,7 @@ const FoodCard = (props) => {
       </div>
       <Card.Body>
         <Card.Title>{props.foodName}</Card.Title>
-        <Link to="/about">View Recipe</Link>
+        <Link to={`/recipePage/${props.link}`}>View Recipe</Link>
       </Card.Body>
     </Card>
   );

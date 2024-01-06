@@ -29,6 +29,7 @@ const Recipes = (props) => {
             }
             foodName={food.strMeal}
             img={food.strMealThumb}
+            link={food.idMeal}
           />
         ))}
       </Row>

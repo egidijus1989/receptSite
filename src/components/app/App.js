@@ -9,6 +9,7 @@ import {
   useParams,
 } from "react-router-dom";
 import About from "../about/About";
+import RecipePage from "../recipePage/RecipePage";
 
 function App() {
   let { id } = useParams();
@@ -22,6 +23,7 @@ function App() {
             <Route path="/category/:id" element={<Main />} />
           </Route>
           <Route path="/about" element={<About />}></Route>
+          <Route path="/recipePage/:id" element={<RecipePage />}></Route>
         </Routes>
         <Footer />
       </Router>
