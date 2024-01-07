@@ -10,17 +10,22 @@ const Main = () => {
   let { id } = useParams();
 
   useEffect(() => {
-    if (id == null) id = "Beef";
-    try {
-      fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${id}`)
-        .then((response) => response.json())
-        .then((data) => {
-          setFoods(data.meals);
-          console.log(data.meals);
-        });
-    } catch (msg) {
-      console.log(msg);
-    }
+    const fetchfoods = async () => {
+      if (id == null) id = "Beef";
+      try {
+        await fetch(
+          `https://www.themealdb.com/api/json/v1/1/filter.php?c=${id}`
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            setFoods(data.meals);
+            console.log(data.meals);
+          });
+      } catch (msg) {
+        console.log(msg);
+      }
+    };
+    fetchfoods();
   }, []);
 
   const handleInputChange = (e) => {

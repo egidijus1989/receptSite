@@ -12,7 +12,7 @@ const Section = () => {
           <h1>Cooking Made Fun and Easy: Unleash Your InnerChef</h1>
           <p>
             Discover more than <span>10,000 recipes</span> in your hand with the
-            bestrecipe. Help you to find the easiest way to cook.1
+            best recipe. Help you to find the easiest way to cook
           </p>
           <Button variant="warning">Explore Recipes</Button>{" "}
         </Col>

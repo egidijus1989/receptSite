@@ -20,13 +20,20 @@ const RecipePage = () => {
   function ingredients() {
     let allIngredients = [];
     for (let i = 1; i < 21; i++) {
-      allIngredients.push(
-        `${food.strIngredient(i)}, amount: ${food.strMeasure2(i)}`
-      );
+      if (food[`strIngredient${i}`] !== "") {
+        allIngredients.push(
+          <li key={i}>
+            {food[`strIngredient${i}`] +
+              "        ,measure: " +
+              food[`strMeasure${i}`]}
+          </li>
+        );
+      }
     }
 
     return allIngredients;
   }
+
   return (
     <div className="container">
       <h1 className="my-2 text-center fw-bold fst-italic">{food.strMeal}</h1>
@@ -40,7 +47,7 @@ const RecipePage = () => {
         {food.strInstructions}
       </p>
       <h5 className="my-2">Ingrediedents:</h5>
-      <ul></ul>
+      <ul>{ingredients()}</ul>
       <a
         className="p-3 bg-success text-decoration-none link-dark rounded-5 my-2"
         href={food.strYoutube}
