@@ -26,7 +26,7 @@ const Main = () => {
       }
     };
     fetchfoods();
-  }, []);
+  }, [id]);
 
   const handleInputChange = (e) => {
     setSearchterm(e.target.value);
