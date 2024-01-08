@@ -25,7 +25,8 @@ const Navigation = () => {
     }
   }, []);
   return (
-    <Container className="header">
+    <Navbar expand="lg" className="">
+        <Container className="header" id="navbarSupportedContent">
       <Navbar.Brand href="#home" className="Logo">
         <img src={grain}></img>Recipedia
       </Navbar.Brand>
@@ -74,6 +75,9 @@ const Navigation = () => {
         </Nav.Link>
       </Nav>
     </Container>
+    </Navbar>
+
+    
   );
 };
 export default Navigation;
