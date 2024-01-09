@@ -14,7 +14,7 @@ const Recipes = (props) => {
     return Math.round(num / 5) * 5;
   }
 
-  let dificulties = ["easy", "Medium", "dificult"];
+  let dificulties = ["easy", "medium", "dificult"];
 
   return (
     <Container className="recipes">
