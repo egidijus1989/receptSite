@@ -1,6 +1,5 @@
 .header {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   text-decoration: none;
 
@@ -10,6 +9,7 @@
     font-style: normal;
     font-weight: bold;
     line-height: normal;
+    padding-right: 18rem;
   }
   .navigation {
     margin: auto;
@@ -37,4 +37,8 @@
   align-items: center;
   text-decoration: none;
   gap: 1rem;
+}
+.navbaras {
+  display: flex;
+  justify-content: space-between;
 }
